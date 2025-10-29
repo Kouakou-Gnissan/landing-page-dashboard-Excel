@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation Excel | Maîtrise des Dashboards - Gnissan Kouakou</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <p class="modal-title">Inscription Confirmée ! 🎉</p>
+            <p class="modal-subtitle">Vous y êtes presque : <span id="places-restantes-modal"></span></p>
+            <p class="modal-text">Finalisez votre inscription et assurez votre place en réglant les 10 000 F CFA de
+                l'inscription compris dans le coût de la formation. Tous
+                les détails vous seront envoyés immédiatement.</p>
+            <a id="whatsapp-link" href="#" target="_blank" class="btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> Finaliser l'inscription (Paiement)
+            </a>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="nav-logo">Dashboard Pro</a>
+            <div class="nav-actions">
+                <p class="nav-rareté" id="nav-rareté"><i class="fas fa-fire"></i> 2 Places Restantes</p>
+                <a href="#inscription" class="btn-nav">Réserver</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title"><span id="typewriter"></span></h1>
+                <p class="hero-subtitle" data-aos="fade-up">
+                    Le seul programme intensif pour créer des **Dashboards Excel dynamiques et percutants** pour
+                    transformer vos données en décisions stratégiques.
+                </p>
+
+                <div class="rareté-cta-zone">
+                    <div class="rareté-pill" data-aos="zoom-in">
+                        <i class="fas fa-users-slash rareté-icon"></i>
+                        <span id="rareté-counter" class="rareté-number">2</span>
+                        <span class="rareté-text">places restantes</span>
+                    </div>
+
+                    <div class="countdown-box" data-aos="fade-up">
+                        <p class="countdown-label">Prochaine session : <span id="start-date-display">15 Nov 2025</span>
+                        </p>
+                        <div id="countdown" class="countdown-timer">
+                            <div class="timer-unit"><span id="days">00</span> Jours</div>
+                            <div class="timer-unit"><span id="hours">00</span> Heures</div>
+                            <div class="timer-unit"><span id="minutes">00</span> Mins</div>
+                            <div class="timer-unit"><span id="seconds">00</span> Sec</div>
+                        </div>
+                    </div>
+                </div>
+
+                <a id="cta-hero" href="#inscription" class="btn-cta btn-primary-gold pulse" data-aos="fade-up">
+                    Je Réserve Ma Place
+                </a>
+
+                <p class="price-disclaimer" data-aos="fade-up">Tarif Spécial : **25 000 F CFA** / participant</p>
+            </div>
+
+            <div class="hero-visual" data-aos="fade-in">
+
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section promise-section" data-aos="fade-up">
+            <div class="container">
+                <p class="promise-text">
+                    <span>**STOP**</span> aux rapports incompréhensibles.
+                    Devenez un<span class="master"><br>**Maître du Reporting**</span>.
+                </p>
+            </div>
+            <div class="carousel-container">
+                <div class="main-slide">
+                    <video autoplay muted loop playsinline class="background-video">
+                        <source src="video-dashbord.mp4"
+                            type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture vidéo.
+                    </video>
+
+                    <div class="main-content">
+                        <div class="name">Créez Votre Tableau de Bord Professionnel</div>
+                        <div class="des">
+                            Formation 100% pratique – Apprenez à transformer vos données Excel en visualisations claires
+                            et percutantes.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section class="section program-section bg-light" id="programme">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Le Programme : <br>3 Séances pour un Impact Maximal</h2>
+                <div class="program-grid">
+
+                    <div class="program-step step-left" data-aos="fade-right">
+                        <div class="step-badge">1. Fondations</div>
+                        <h3>Vérifier et Préparer les Données</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Nettoyage des données (Power Query Léger)</li>
+                            <li><i class="fas fa-check-circle"></i> Les fonctions clés (RECHERCHEX/V, INDEX, Décalage)
+                            </li>
+                            <li><i class="fas fa-check-circle"></i> Préparation pour le Croisement Dynamique</li>
+                        </ul>
+                    </div>
+
+                    <div class="program-step step-right" data-aos="fade-left">
+                        <div class="step-badge">2. La Puissance du TCD</div>
+                        <h3>Visualisation & Interactivité</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Techniques avancées de Tableaux Croisés Dynamiques
+                            </li>
+                            <li><i class="fas fa-check-circle"></i> Graphiques dynamiques et Conditionnels</li>
+                            <li><i class="fas fa-check-circle"></i> Segmentation (Slicers) pour un Dashboard interactif
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="program-step step-left full-width" data-aos="fade-right">
+                        <div class="step-badge">3. Finalisation & Design</div>
+                        <h3>Créer un Dashboard Professionnel</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Design Épuré et Psychologie des Couleurs pour le
+                                Reporting</li>
+                            <li><i class="fas fa-check-circle"></i> Les Indicateurs Clés de Performance (KPI)</li>
+                            <li><i class="fas fa-check-circle"></i> **Automatisation du rafraîchissement** et protection
+                                du classeur.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section formateur-section" id="formateur">
+            <div class="container formateur-container">
+                <div class="formateur-text" data-aos="fade-right">
+                    <h2 class="section-title">L'Expert qui va vous Former</h2>
+                    <p class="expert-name">Gnissan Kouakou</p>
+                    <p class="expert-title">Consultant en Analyse de Données & Formateur Excel</p>
+                    <p class="expert-bio">
+                        Passionné par la donnée et la performance, Gnissan Kouakou accompagne depuis plusieurs années
+                        des professionnels et étudiants dans la maîtrise d’Excel.
+                        Il conçoit des outils de gestion, de reporting et d’automatisation utilisés par des entreprises
+                        en Côte d’Ivoire. Sa pédagogie claire et pratique permet à chaque apprenant de créer des
+                        tableaux de bord professionnels, même sans être expert en Excel.
+                    </p>
+                    <div class="expert-stats">
+                        <span><i class="fas fa-medal"></i> +3 ans d’Exp.</span>
+                        <span><i class="fas fa-user-friends"></i> +50 Apprenants formés</span>
+                        <span><i class="fas fa-chart-bar"></i> Créateur d’outils Excel Pro</span>
+                    </div>
+                </div>
+                <div class="formateur-photo-container" >
+                    <img src="image2.jpg" alt="portrait de formateur">
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section package-section bg-dark" id="package">
+            <div class="container package-container">
+                <h2 class="section-title-white" data-aos="fade-up">Le Package Complet de la Maîtrise</h2>
+                <div class="package-grid">
+                    <div class="package-item" data-aos="zoom-in" data-aos-delay="100">
+                        <i class="fas fa-laptop-code package-icon"></i>
+                        <h3>3 Sessions en Direct</h3>
+                        <p>Formation 100% pratique pour interagir et poser toutes vos questions.</p>
+                    </div>
+                    <div class="package-item" data-aos="zoom-in" data-aos-delay="200">
+                        <i class="fas fa-file-excel package-icon"></i>
+                        <h3>Fichiers & Modèles</h3>
+                        <p>Accès à tous les fichiers sources pour réutiliser les dashboards créés.</p>
+                    </div>
+                    <div class="package-item" data-aos="zoom-in" data-aos-delay="300">
+                        <i class="fab fa-whatsapp package-icon"></i>
+                        <h3>Suivi de 07 Jours</h3>
+                        <p>Assistance WhatsApp personnalisée pour implémenter votre premier dashboard au bureau.</p>
+                    </div>
+                    <div class="package-item" data-aos="zoom-in" data-aos-delay="400">
+                        <i class="fas fa-chart-line package-icon"></i>
+                        <h3>Projet de Fin de Formation</h3>
+                        <p>Chaque participant réalise un tableau de bord complet pour valider ses acquis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section inscription-section" id="inscription">
+            <div class="container inscription-container" data-aos="fade-up">
+                <div class="inscription-price-box">
+                    <p class="price-tag">INVESTISSEMENT</p>
+                    <div class="price-value">25 000 F CFA</div>
+                    <p class="price-note">Accès au package complet</p>
+
+                    <div class="rareté-pill-final pulse">
+                        <i class="fas fa-users-slash rareté-icon-red"></i>
+                        <span id="rareté-counter-final">2</span> places restantes !
+                    </div>
+
+                    <a id="cta-bottom" href="#" class="btn-cta btn-primary-gold pulse">
+                        Je Réserve Ma Place et Change Mon Reporting
+                    </a>
+                </div>
+
+                <div class="inscription-faq" data-aos="fade-left">
+                    <h3 class="faq-title-ins">Questions Fréquentes Rapides</h3>
+                    <div class="faq-item">
+                        <h4 class="faq-question-ins">Quand commence la formation ? <i class="fas fa-chevron-down"></i>
+                        </h4>
+                        <p class="faq-answer-ins">Début : 15 novembre 2025. Les horaires exacts seront communiqués aux
+                            inscrits.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4 class="faq-question-ins">Est-ce remboursable ? <i class="fas fa-chevron-down"></i></h4>
+                        <p class="faq-answer-ins">Non, l'inscription est ferme et définitive en raison du nombre très
+                            limité de places.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4 class="faq-question-ins">Comment se déroulent les séances ? <i
+                                class="fas fa-chevron-down"></i></h4>
+                        <p class="faq-answer-ins">
+                            Les séances se font en ligne (Zoom ou Google Meet). Vous recevrez un lien privé avant chaque
+                            session.
+                            Chaque séance est 100% pratique avec partage d’écran et exercices en direct.
+                        </p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4 class="faq-question-ins">Faut-il déjà bien connaître Excel ? <i
+                                class="fas fa-chevron-down"></i></h4>
+                        <p class="faq-answer-ins">
+                            Pas forcément. Il suffit de maîtriser les bases (formules simples, filtres, tableaux).
+                            Tout le reste est expliqué pas à pas durant la formation.
+                        </p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4 class="faq-question-ins">Et si je ne peux pas assister à une séance ? <i
+                                class="fas fa-chevron-down"></i></h4>
+                        <p class="faq-answer-ins">
+                            Pas d’inquiétude ! Vous recevrez un enregistrement de la séance pour la revoir à tout
+                            moment.
+                        </p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4 class="faq-question-ins">Comment se fait le paiement ? <i class="fas fa-chevron-down"></i>
+                        </h4>
+                        <p class="faq-answer-ins">
+                            Le paiement se fait par Mobile Money (Orange Money / Moov / Wave).
+                            Une fois le paiement confirmé, votre place est immédiatement réservée.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> DataFlow Mastery. Propulsé par Gnissan Kouakou.</p>
+        </div>
+    </footer>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // ----------------------------------------------------
+            // CONFIGURATION
+            // ----------------------------------------------------
+            const placesTotal = 5;
+            const placesRestantes = 2;
+            // Date de début de la formation (Année, Mois-1, Jour, Heure, Minute)
+            const debutFormation = new Date(2025, 10, 15, 19, 0, 0).getTime();
+            const currentYear = new Date().getFullYear();
+            const whatsappNum = "+2250153179691";
+            const titleText = "Maîtrisez les Tableaux de Bord Excel en 3 Jours."; // Texte pour l'effet machine à écrire
+
+            // ----------------------------------------------------
+            // RÉFÉRENCES DOM
+            // ----------------------------------------------------
+            const daysElement = document.getElementById('days');
+            const hoursElement = document.getElementById('hours');
+            const minutesElement = document.getElementById('minutes');
+            const secondsElement = document.getElementById('seconds');
+            const typewriterElement = document.getElementById('typewriter');
+            const raretéCounter = document.getElementById('rareté-counter');
+            const raretéCounterFinal = document.getElementById('rareté-counter-final');
+            const placesRestantesModal = document.getElementById('places-restantes-modal');
+            const startDateDisplay = document.getElementById('start-date-display');
+            const ctaButtons = document.querySelectorAll('.btn-cta');
+            const modalOverlay = document.getElementById('modal-overlay');
+            const closeModalBtn = document.querySelector('.close-btn');
+            const whatsappLink = document.getElementById('whatsapp-link');
+
+            // ----------------------------------------------------
+            // I. EFFET MACHINE À ÉCRIRE (Typewriter Effect)
+            // ----------------------------------------------------
+            let i = 0;
+            function typeWriter() {
+                if (i < titleText.length) {
+                    typewriterElement.innerHTML += titleText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 50); // Vitesse d'écriture
+                } else {
+                    // Effet de lueur après l'écriture
+                    typewriterElement.style.textShadow = '0 0 10px var(--color-gold)';
+                }
+            }
+            typeWriter();
+
+            // ----------------------------------------------------
+            // II. GESTION DE LA RARETÉ (Compteurs)
+            // ----------------------------------------------------
+            raretéCounter.textContent = placesRestantes;
+            raretéCounterFinal.textContent = placesRestantes;
+            placesRestantesModal.textContent = `${placesRestantes} place${placesRestantes > 1 ? 's' : ''} restantes !`;
+            document.getElementById('nav-rareté').innerHTML = `<i class="fas fa-fire"></i> ${placesRestantes} Place${placesRestantes > 1 ? 's' : ''} Restante${placesRestantes > 1 ? 's' : ''}`;
+
+            // ----------------------------------------------------
+            // III. COMPTE À REBOURS
+            // ----------------------------------------------------
+
+            const options = { day: 'numeric', month: 'short', year: 'numeric' };
+            startDateDisplay.textContent = new Date(debutFormation).toLocaleDateString('fr-FR', options);
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = debutFormation - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                if (distance < 0) {
+                    clearInterval(timerInterval);
+                    if (countdownElement) {
+                        countdownElement.innerHTML = `<div class="timer-unit" style="flex-basis: 100%">DÉMARRÉ !</div>`;
+                    }
+                    return;
+                }
+
+                daysElement.textContent = String(days).padStart(2, '0');
+                hoursElement.textContent = String(hours).padStart(2, '0');
+                minutesElement.textContent = String(minutes).padStart(2, '0');
+                secondsElement.textContent = String(seconds).padStart(2, '0');
+            }
+
+            updateCountdown();
+            const timerInterval = setInterval(updateCountdown, 1000);
+
+            // ----------------------------------------------------
+            // IV. GESTION DE LA FAQ (Accordeon)
+            // ----------------------------------------------------
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.querySelector('h4, h3').addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+
+                    // Fermer tous les autres pour un effet propre
+                    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+
+            // ----------------------------------------------------
+            // V. POPUP DE RÉSERVATION (MODAL)
+            // ----------------------------------------------------
+
+            function openModal(e) {
+                e.preventDefault();
+
+                // Préparation du lien WhatsApp pour le paiement
+                const waMessage = encodeURIComponent(`Bonjour, je souhaite finaliser ma réservation pour la formation Excel Dashboard. (Je confirme qu'il reste ${placesRestantes} places).`);
+                whatsappLink.href = `https://wa.me/${whatsappNum}?text=${waMessage}`;
+
+                modalOverlay.classList.add('active');
+            }
+
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', openModal);
+            });
+
+            closeModalBtn.addEventListener('click', () => {
+                modalOverlay.classList.remove('active');
+            });
+
+            modalOverlay.addEventListener('click', (e) => {
+                if (e.target === modalOverlay) {
+                    modalOverlay.classList.remove('active');
+                }
+            });
+
+            // ----------------------------------------------------
+            // VI. ANIMATIONS D'APPARITION (Intersection Observer)
+            // ----------------------------------------------------
+
+            // Le style CSS gère l'état initial des éléments [data-aos]
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('aos-animate');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('[data-aos]').forEach(element => {
+                // Appliquer une transformation initiale pour les effets slide
+                if (element.getAttribute('data-aos').includes('fade-up')) {
+                    element.style.transform = 'translateY(20px)';
+                } else if (element.getAttribute('data-aos').includes('fade-right')) {
+                    element.style.transform = 'translateX(-20px)';
+                } else if (element.getAttribute('data-aos').includes('fade-left')) {
+                    element.style.transform = 'translateX(20px)';
+                }
+
+                observer.observe(element);
+            });
+
+            // ----------------------------------------------------
+            // VII. INITIALISATION DU FOOTER
+            // ----------------------------------------------------
+            if (document.getElementById('current-year')) {
+                document.getElementById('current-year').textContent = currentYear;
+            }
+        });
+    </script>
+
+</body>
+
+</html>

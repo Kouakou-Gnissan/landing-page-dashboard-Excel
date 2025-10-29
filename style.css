@@ -1,0 +1,866 @@
+/* VARIABLES GLOBALES */
+:root {
+    --color-dark: #1f2833;
+    /* Bleu Marine / Anthracite - Autorité */
+    --color-primary: #007bff;
+    /* Bleu d'accentuation */
+    --color-gold: #ffb700;
+    /* Or/Jaune - CTA et Valeur */
+    --color-light: #f4f6f8;
+    /* Blanc Cassé */
+    --color-white: #ffffff;
+    --color-red: #d9534f;
+    /* Urgence */
+
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* RESET ET BASE */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--color-dark);
+    background-color: var(--color-white);
+    overflow-x: hidden;
+   
+}
+
+.container {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: var(--color-dark);
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.bg-light {
+    background-color: var(--color-light);
+}
+
+.bg-dark {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+}
+
+.section-title {
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title-white {
+    font-size: 2.2em;
+    text-align: center;
+    color: var(--color-white);
+    margin-bottom: 60px;
+}
+
+.section-title-left {
+    text-align: left;
+    font-size: 2em;
+}
+
+/* -------------------
+   1. NAVIGATION
+   ------------------- */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 10px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.4em;
+    color: var(--color-dark);
+    text-decoration: none;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-rareté {
+    background-color: var(--color-red);
+    color: var(--color-white);
+    padding: 5px 10px;
+    border-radius: 50px;
+    font-size: 0.9em;
+    font-weight: 600;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-nav {
+    display: none;
+    /* Masqué sur mobile */
+}
+
+/* -------------------
+   2. BOUTONS CTA & RARETÉ
+   ------------------- */
+.btn-cta {
+    display: inline-block;
+    text-decoration: none;
+    padding: 18px 35px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1.1em;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+    border: none;
+    text-transform: uppercase;
+}
+
+.btn-primary-gold {
+    background-color: var(--color-gold);
+    color: var(--color-dark);
+    box-shadow: 0 5px 20px rgba(255, 183, 0, 0.4);
+}
+
+.btn-primary-gold:hover {
+    background-color: #ffc933;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 183, 0, 0.6);
+}
+
+/* Animation de pulsation (Urgence) */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 183, 0, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(255, 183, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 183, 0, 0);
+    }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Rareté Pill */
+.rareté-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: var(--color-red);
+    color: var(--color-white);
+    border-radius: 50px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.rareté-icon {
+    margin-right: 10px;
+}
+
+.rareté-number {
+    font-size: 1.2em;
+    margin-right: 5px;
+}
+
+/* Rareté Finale */
+.rareté-pill-final {
+    padding: 10px;
+    font-size: 1.1em;
+    background-color: var(--color-white);
+    color: var(--color-red);
+    border: 2px solid var(--color-red);
+    border-radius: 5px;
+    margin: 20px 0;
+    font-weight: 700;
+    display: block;
+    text-align: center;
+}
+
+.rareté-icon-red {
+    margin-right: 8px;
+    color: var(--color-red);
+}
+
+/* -------------------
+   3. HERO SECTION
+   ------------------- */
+.hero-section {
+    background-color: var(--color-dark);
+    padding: 100px 0 60px;
+    color: var(--color-white);
+    overflow: hidden;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 2.8em;
+    color: var(--color-white);
+    margin-bottom: 20px;
+    line-height: 1.1;
+    min-height: 100px;
+    /* Pour éviter le saut de mise en page avec l'effet de machine à écrire */
+}
+
+.hero-subtitle {
+    font-size: 1.2em;
+    font-weight: 300;
+    max-width: 650px;
+    margin: 0 auto 40px;
+}
+
+.rareté-cta-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.price-disclaimer {
+    font-size: 1em;
+    margin-top: 10px;
+    color: #a0a0a0;
+}
+
+.hero-visual {
+    display: none;
+    /* Masqué sur mobile */
+    /* Place de l'image de dashboard */
+}
+
+/* Compte à Rebours (Amélioré) */
+.countdown-box {
+    width: 100%;
+    max-width: 350px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.countdown-label {
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--color-gold);
+    text-align: center;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
+}
+
+.timer-unit {
+    background-color: var(--color-white);
+    color: var(--color-dark);
+    padding: 10px 5px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 700;
+    flex: 1;
+    text-align: center;
+}
+
+.timer-unit span {
+    display: block;
+    font-size: 1.6em;
+    color: var(--color-red);
+    line-height: 1;
+}
+
+/* -------------------
+   4. SECTIONS DIVERSES
+   ------------------- */
+
+/* Section Promesse */
+.promise-section {
+    padding: 40px 0;
+    background-color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.promise-text {
+    font-size: 1.5em;
+    font-family: var(--font-heading);
+    color: var(--color-dark);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    border-bottom: 3px solid var(--color-gold);
+    padding-bottom: 10px;
+}
+
+.promise-text span {
+    color: var(--color-red);
+}
+
+
+
+/* Section Programme */
+.program-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.program-step {
+    background-color: var(--color-white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+}
+
+.program-step:hover {
+    transform: translateY(-5px);
+}
+
+.program-step h3 {
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+.step-badge {
+    display: inline-block;
+    background-color: var(--color-gold);
+    color: var(--color-dark);
+    font-weight: 700;
+    padding: 5px 15px;
+    border-radius: 50px;
+    margin-bottom: 10px;
+}
+
+.program-step ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.program-step li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.program-step li .fas {
+    color: var(--color-primary);
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+/* Section Formateur */
+.formateur-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+.formateur-text {
+    flex: 1;
+    text-align: center;
+    width: 100%;
+    margin-left: 40px; 
+}
+
+.formateur-photo-container {
+    width: 250px;
+    height: 250px;
+    background-color: var(--color-dark);
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 0 10px rgba(255, 183, 0, 0.3);
+}
+
+.formateur-photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(10%);
+    transition: filter 0.3s;
+}
+
+.formateur-photo-container:hover img {
+    filter: grayscale(0%);
+}
+
+.expert-name {
+    font-family: var(--font-heading);
+    font-size: 1.8em;
+    color: var(--color-dark);
+    margin-bottom: 5px;
+}
+
+.expert-title {
+    font-style: italic;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.expert-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+    font-weight: 600;
+    color: var(--color-dark);
+    justify-content: center;
+}
+
+.expert-stats span {
+    background-color: var(--color-light);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.expert-stats .fas {
+    color: var(--color-gold);
+    margin-right: 5px;
+}
+
+/* Section Package */
+.package-container {
+    text-align: center;
+}
+
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.package-item {
+    background-color: var(--color-dark);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.package-item:hover {
+    background-color: #2c3847;
+}
+
+.package-icon {
+    font-size: 2.5em;
+    color: var(--color-gold);
+    margin-bottom: 15px;
+}
+
+.package-item h3 {
+    color: var(--color-white);
+    font-size: 1.2em;
+}
+
+.package-item p {
+    color: #a0a0a0;
+    font-size: 0.9em;
+}
+
+/* Section Inscription */
+.inscription-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.inscription-price-box {
+    background-color: var(--color-light);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.price-tag {
+    font-size: 0.9em;
+    color: var(--color-dark);
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.price-value {
+    font-size: 3em;
+    color: var(--color-red);
+    font-family: var(--font-heading);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.price-note {
+    font-size: 0.9em;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+/* FAQ Basse */
+.inscription-faq {
+    width: 100%;
+    max-width: 600px;
+}
+
+.faq-title-ins {
+    color: var(--color-primary);
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.faq-item {
+    border-bottom: 1px solid #ddd;
+}
+
+.faq-question-ins {
+    cursor: pointer;
+    padding: 15px 0;
+    font-size: 1em;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer-ins {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, padding 0.4s;
+    padding: 0;
+}
+
+.faq-item.active .faq-answer-ins {
+    max-height: 100px;
+    /* Sufisamment grand */
+    padding-bottom: 15px;
+}
+
+/* -------------------
+   5. FOOTER
+   ------------------- */
+.footer {
+    background-color: var(--color-dark);
+    color: #a0a0a0;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+/* -------------------
+   6. MODAL (Réutilisation du style précédent, mais ajusté)
+   ------------------- */
+.modal-overlay {
+    /* ... styles ... */
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--color-white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    position: relative;
+    max-width: 90%;
+    width: 450px;
+    text-align: center;
+    animation: slideIn 0.4s ease-out;
+}
+
+.modal-title {
+    color: var(--color-gold);
+}
+
+.modal-subtitle {
+    color: var(--color-red);
+}
+
+.btn-whatsapp {
+    /* ... styles ... */
+    background-color: #25D366;
+}
+
+/* -------------------
+   7. RESPONSIVE DESKTOP
+   ------------------- */
+@media (min-width: 768px) {
+    .btn-nav {
+        display: inline-block;
+        background-color: var(--color-dark);
+        color: var(--color-gold);
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background-color 0.2s;
+    }
+
+    .btn-nav:hover {
+        background-color: #334455;
+    }
+
+    /* HERO */
+    .hero-section {
+        background-color: var(--color-dark);
+        padding: 100px 0 60px;
+        color: var(--color-white);
+        overflow: hidden;
+    }
+
+    .hero-container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+        justify-content: center;
+
+
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 4em;
+    }
+
+    .hero-visual {
+        display: block;
+        flex: 1;
+        /* Ajoutez l'image ici dans une implémentation réelle */
+    }
+
+    .rareté-cta-zone {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .countdown-box {
+        margin: 0;
+    }
+
+    /* PROGRAMME */
+    .program-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .program-step {
+        max-width: 400px;
+    }
+    .full-width {
+        grid-column: 1 / -1;
+    }
+
+    /* FORMATEUR */
+    .formateur-container {
+        flex-direction: row;
+        gap: 80px;
+        text-align: left;
+    }
+
+    .formateur-container .section-title {
+        text-align: left;
+    }
+
+    .formateur-text {
+        flex: 2;
+        text-align: left;
+    }
+
+    .formateur-photo-container {
+        flex: 1;
+        order: 2;
+        max-width: 300px;
+        height: 300px;
+    }
+
+    /* INSCRIPTION */
+    .inscription-container {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .inscription-price-box {
+        margin: 0;
+    }
+}
+
+/* -------------------
+   8. ANIMATIONS AOS
+   ------------------- */
+/* Simulé ici, normalement géré par une librairie JS comme AOS */
+[data-aos] {
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.19, 1, 0.22, 1), transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+[data-aos="fade-right"].aos-animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+[data-aos="fade-left"].aos-animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.aos-animate {
+    opacity: 1;
+    transform: none;
+}
+
+
+/* style du carousel */
+.carousel-container {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  padding: 15px;
+}
+
+.main-slide {
+  width: 100%;
+  height: 500px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.background-video {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  object-fit: cover;
+}
+
+.main-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px 30px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  color: white;
+  text-align: left;
+  z-index: 2;
+}
+
+.main-content .name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.main-content .des {
+  font-size: 1rem;
+  max-width: 400px;
+  line-height: 1.6;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 768px) {
+  .main-slide {
+    height: 300px;
+  }
+  .main-content .name {
+    font-size: 1.8rem;
+  }
+  .main-content .des {
+    font-size: 1rem;
+  }
+}
+
