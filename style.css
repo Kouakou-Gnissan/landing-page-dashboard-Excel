@@ -100,11 +100,14 @@ h3 {
 .nav-logo {
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     color: var(--color-dark);
     text-decoration: none;
 }
 
+.nav-logo span {
+    color: var(--color-red);
+}
 .nav-actions {
     display: flex;
     align-items: center;
@@ -857,10 +860,10 @@ h3 {
     height: 300px;
   }
   .main-content .name {
-    font-size: 1.8rem;
+    font-size: 1rem;
   }
   .main-content .des {
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
 }
 
