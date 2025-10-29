@@ -100,7 +100,7 @@ h3 {
 .nav-logo {
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 1.4em;
+    font-size: 1.1rem;
     color: var(--color-dark);
     text-decoration: none;
 }
