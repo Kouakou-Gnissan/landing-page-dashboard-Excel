@@ -793,49 +793,48 @@ h3 {
     transform: none;
 }
 
-
-/* style du carousel */
+/* 🎬 Style du carousel */
 .carousel-container {
   width: 100%;
   max-width: 900px;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   border-radius: 20px;
-  padding: 0;
+  padding: 15px;
   overflow: hidden;
   position: relative;
-  padding: 15px;
 }
 
+/* ✅ Slide principale avec ratio responsive */
 .main-slide {
+  position: relative;
   width: 100%;
-  height: 500px;
+  aspect-ratio: 16/9; /* Maintient un bon cadrage sur mobile et PC */
   border-radius: 15px;
   overflow: hidden;
-  position: relative;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
+/* 🎥 Vidéo d’arrière-plan parfaitement adaptée */
 .background-video {
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Remplit sans déformation */
   z-index: 1;
-  object-fit: cover;
+  filter: brightness(0.9); /* ✅ Assombrit légèrement pour bien lire le texte */
 }
 
+/* 🧾 Contenu principal sur la vidéo */
 .main-content {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   padding: 40px 30px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
   color: white;
   text-align: left;
   z-index: 2;
@@ -855,15 +854,21 @@ h3 {
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
+/* 📱 Adaptation mobile */
 @media (max-width: 768px) {
   .main-slide {
-    height: 300px;
+    aspect-ratio: 16/9;
   }
+
+  .main-content {
+    padding: 20px;
+  }
+
   .main-content .name {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
+
   .main-content .des {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 }
-
